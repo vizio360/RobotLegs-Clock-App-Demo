@@ -5,10 +5,9 @@ package
     import model.ClockModel;
 
     import view.AnalogClock;
-    import view.AnalogClockMediator;
     import view.Clock;
+    import view.ClockMediator;
     import view.DigitalClock;
-    import view.DigitalClockMediator;
 
     import org.robotlegs.base.ContextEvent;
     import org.robotlegs.mvcs.Context;
@@ -35,8 +34,8 @@ package
             mediatorMap.mapView(ClockApp, ClockAppMediator);
             mediatorMap.createMediator(contextView);
 
-            mediatorMap.mapView(AnalogClock, AnalogClockMediator, Clock);
-            mediatorMap.mapView(DigitalClock, DigitalClockMediator, Clock);
+            mediatorMap.mapView(AnalogClock, ClockMediator, Clock);
+            mediatorMap.mapView(DigitalClock, ClockMediator, Clock);
 
             super.startup();
         }

@@ -2,22 +2,32 @@ package view
 {
     import controller.ClockEvent;
 
+    import model.ClockModel;
+
+    import org.robotlegs.mvcs.Mediator;
+
     import flash.events.Event;
 
     /**
      * @author Simone Vicentini
      */
-    public class AnalogClockMediator extends AbstractClockMediator
+    public class ClockMediator extends Mediator
     {
+        [Inject]
+        public var clockModel:ClockModel;
 
-        public function AnalogClockMediator()
+        [Inject]
+        public var clockView:Clock;
+
+        public function ClockMediator()
         {
-            super(this);
+
         }
 
         override public function onRegister():void
         {
             super.onRegister();
+            eventMap.mapListener(eventDispatcher, ClockEvent.TICK, onClockTick);
             eventMap.mapListener(clockView, Event.ADDED_TO_STAGE, onViewAddedToStage);
         }
 
@@ -33,7 +43,7 @@ package view
             clockView.hour = newTime.hours;
         }
 
-        override protected function onClockTick(event:ClockEvent):void
+        private function onClockTick(event:ClockEvent):void
         {
             var newTime:Date = event.time;
             updateView(newTime);
