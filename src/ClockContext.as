@@ -1,5 +1,6 @@
 package
 {
+    import controller.SetupSwfProfiler;
     import controller.AlignClocksOnStage;
     import controller.AddClocks;
     import controller.SetupStage;
@@ -30,10 +31,10 @@ package
         override public function startup():void
         {
             commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, SetupStage);
+            commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, SetupSwfProfiler);
             commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, AddClocks);
             commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, AlignClocksOnStage);
             commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, StartClock);
-
 
             injector.mapSingleton(ClockModel);
 

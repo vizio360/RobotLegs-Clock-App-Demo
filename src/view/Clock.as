@@ -7,9 +7,7 @@ package view
      */
     public interface Clock extends IEventDispatcher
     {
-        function set hour(hour:int):void;
-        function set minutes(minutes:int):void;
-        function set seconds(seconds:int):void;
+        function set time(time:Date):void;
         function set x(x:Number):void;
         function set y(y:Number):void;
     }

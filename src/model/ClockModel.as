@@ -8,16 +8,11 @@ package model
     import flash.utils.Timer;
 
     /**
-     *
-     *
      * @author Simone Vicentini
      */
     public class ClockModel extends Actor
     {
-        //timer to dispatch the new time every second
         private var clockTimer:Timer;
-        //actual time object
-        private var _time:Date;
 
         public function ClockModel()
         {
@@ -28,7 +23,6 @@ package model
 
         private function createTime():void
         {
-            _time = new Date();
         }
 
         private function createTimer():void
@@ -39,13 +33,9 @@ package model
 
         private function onClockTimer(event:TimerEvent):void
         {
-            _time.setTime(_time.getTime() + 1000);
-            dispatch(new ClockEvent(ClockEvent.TICK, _time));
+            dispatch(new ClockEvent(ClockEvent.TICK, new Date()));
         }
 
-        /*
-         * Starts the timer to dispatch the time
-         */
         public function start():void
         {
             clockTimer.start();
@@ -53,7 +43,7 @@ package model
 
         public function get time():Date
         {
-            return _time;
+            return new Date();
         }
     }
 }

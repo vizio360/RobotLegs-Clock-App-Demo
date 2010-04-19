@@ -33,7 +33,7 @@ package view
             addChild(skin);
         }
 
-        public function set hour(hour:int):void
+        private function set hour(hour:int):void
         {
             setDigits(hourHand, hour);
         }
@@ -48,14 +48,21 @@ package view
 
         }
 
-        public function set minutes(minutes:int):void
+        private function set minutes(minutes:int):void
         {
             setDigits(minutesHand, minutes);
         }
 
-        public function set seconds(seconds:int):void
+        private function set seconds(seconds:int):void
         {
             setDigits(secondsHand, seconds);
+        }
+
+        public function set time(time:Date):void
+        {
+            hour = time.hours;
+            minutes = time.minutes;
+            seconds = time.seconds;
         }
     }
 }
