@@ -32,21 +32,32 @@ package view
             addChild(skin);
         }
 
-        public function set hour(hour:int):void
+        private function set hour(hour:Number):void
         {
             if (hour > 12)
                 hour -= 12;
             hourHand.rotation = 360/12 * hour;
         }
 
-        public function set minutes(minutes:int):void
+        private function set minutes(minutes:int):void
         {
             minutesHand.rotation = 360/60 * minutes;
+
         }
 
-        public function set seconds(seconds:int):void
+        private function set seconds(seconds:int):void
         {
             secondsHand.rotation = 360/60 * seconds;
+        }
+
+        public function set time(time:Date):void
+        {
+            var hour:Number = time.hours;
+            hour +=  (1/60 * time.minutes);
+            this.hour = hour;
+
+            minutes = time.minutes;
+            seconds = time.seconds;
         }
     }
 }

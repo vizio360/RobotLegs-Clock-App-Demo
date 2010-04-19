@@ -38,9 +38,7 @@ package view
 
         private function updateView(newTime:Date):void
         {
-            clockView.seconds = newTime.seconds;
-            clockView.minutes = newTime.minutes;
-            clockView.hour = newTime.hours;
+            clockView.time = newTime;
         }
 
         private function onClockTick(event:ClockEvent):void
