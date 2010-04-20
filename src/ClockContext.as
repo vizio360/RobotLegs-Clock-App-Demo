@@ -1,10 +1,10 @@
 package
 {
-    import controller.SetupSwfProfiler;
-    import controller.AlignClocksOnStage;
-    import controller.AddClocks;
-    import controller.SetupStage;
-    import controller.StartClock;
+    import controller.swfprofiler.SetupSwfProfiler;
+    import controller.clock.StartClock;
+    import controller.clock.AddClocks;
+    import controller.stage.SetupStage;
+    import controller.clock.AlignClocksOnStage;
 
     import model.ClockModel;
 

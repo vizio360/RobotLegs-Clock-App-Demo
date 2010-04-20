@@ -1,6 +1,6 @@
 package model
 {
-    import controller.ClockEvent;
+    import controller.clock.ClockEvent;
 
     import org.robotlegs.mvcs.Actor;
 

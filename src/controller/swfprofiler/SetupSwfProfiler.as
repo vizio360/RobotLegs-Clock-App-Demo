@@ -1,4 +1,4 @@
-package controller
+package controller.swfprofiler
 {
     import com.flashdynamix.utils.SWFProfiler;
 

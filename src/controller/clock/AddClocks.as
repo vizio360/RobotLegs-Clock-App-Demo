@@ -1,4 +1,4 @@
-package controller
+package controller.clock
 {
     import view.AnalogClock;
     import view.DigitalClock;

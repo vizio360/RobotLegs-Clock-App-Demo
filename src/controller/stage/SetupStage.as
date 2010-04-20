@@ -1,4 +1,4 @@
-package controller
+package controller.stage
 {
     import org.robotlegs.mvcs.Command;
 

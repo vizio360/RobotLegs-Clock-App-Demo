@@ -1,4 +1,4 @@
-package controller
+package controller.clock
 {
     import model.ClockModel;
 

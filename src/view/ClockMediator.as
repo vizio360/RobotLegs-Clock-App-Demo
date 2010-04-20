@@ -1,6 +1,6 @@
 package view
 {
-    import controller.ClockEvent;
+    import controller.clock.ClockEvent;
 
     import model.ClockModel;
 

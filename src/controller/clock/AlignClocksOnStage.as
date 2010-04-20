@@ -1,4 +1,4 @@
-package controller
+package controller.clock
 {
     import org.robotlegs.mvcs.Command;
 
