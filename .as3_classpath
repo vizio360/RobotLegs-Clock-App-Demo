@@ -9,7 +9,7 @@
     <AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">servicemonitor.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">applicationupdater_ui.swc</AS3Classpath>
     <AS3Classpath generateProblems="true" type="source" useAsSharedCode="false">src</AS3Classpath>
-    <AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">3rdParty/robotlegs-framework-v1.0.3/libs/SwiftSuspenders-v1.0.1.swc</AS3Classpath>
-    <AS3Classpath generateProblems="true" type="source" useAsSharedCode="false">3rdParty/robotlegs-framework-v1.0.3/src</AS3Classpath>
     <AS3Classpath generateProblems="true" type="source" useAsSharedCode="false">3rdParty/swfProfiler</AS3Classpath>
+    <AS3Classpath generateProblems="true" type="source" useAsSharedCode="false">3rdParty/robotlegs/src</AS3Classpath>
+    <AS3Classpath generateProblems="false" type="lib" useAsSharedCode="false">3rdParty/robotlegs/build/libs/SwiftSuspenders-v1.5.1.swc</AS3Classpath>
 </AS3Classpath>
