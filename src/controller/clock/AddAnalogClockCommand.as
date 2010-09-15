@@ -1,20 +1,19 @@
 package controller.clock
 {
+    import events.ClockAppEvent;
+
     import view.AnalogClock;
-    import view.DigitalClock;
 
     import org.robotlegs.mvcs.Command;
 
     /**
      * @author Simone Vicentini
      */
-    public class AddClocks extends Command
+    public class AddAnalogClockCommand extends Command
     {
         override public function execute():void
         {
-            contextView.addChild(new AnalogClock());
-            contextView.addChild(new DigitalClock());
-
+            dispatch(new ClockAppEvent(ClockAppEvent.ADD_CLOCK, new AnalogClock()));
         }
     }
 }

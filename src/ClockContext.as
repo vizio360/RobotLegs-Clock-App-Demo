@@ -1,10 +1,9 @@
 package
 {
-    import controller.swfprofiler.SetupSwfProfiler;
+    import controller.clock.AddAnalogClockCommand;
+    import controller.clock.AddDigitalClockCommand;
     import controller.clock.StartClock;
-    import controller.clock.AddClocks;
-    import controller.stage.SetupStage;
-    import controller.clock.AlignClocksOnStage;
+    import controller.swfprofiler.SetupSwfProfiler;
 
     import model.ClockModel;
 
@@ -17,6 +16,7 @@ package
     import org.robotlegs.mvcs.Context;
 
     import flash.display.DisplayObjectContainer;
+    import flash.display.Stage;
 
     /**
      * @author Simone Vicentini
@@ -30,10 +30,9 @@ package
 
         override public function startup():void
         {
-            commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, SetupStage);
             commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, SetupSwfProfiler);
-            commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, AddClocks);
-            commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, AlignClocksOnStage);
+            commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, AddAnalogClockCommand);
+            commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, AddDigitalClockCommand);
             commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, StartClock);
 
             injector.mapSingleton(ClockModel);
@@ -41,8 +40,12 @@ package
             mediatorMap.mapView(ClockApp, ClockAppMediator);
             mediatorMap.createMediator(contextView);
 
+            mediatorMap.mapView(Stage, StageMediator);
+            mediatorMap.createMediator(contextView.stage);
+
             mediatorMap.mapView(AnalogClock, ClockMediator, Clock);
             mediatorMap.mapView(DigitalClock, ClockMediator, Clock);
+
 
             super.startup();
         }

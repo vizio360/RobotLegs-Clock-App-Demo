@@ -1,8 +1,7 @@
 package view
 {
-    import controller.clock.ClockEvent;
-
     import model.ClockModel;
+    import model.events.ClockEvent;
 
     import org.robotlegs.mvcs.Mediator;
 

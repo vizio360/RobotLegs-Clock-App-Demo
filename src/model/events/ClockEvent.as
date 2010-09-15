@@ -1,4 +1,4 @@
-package controller.clock
+package model.events
 {
     import flash.events.Event;
 
@@ -7,7 +7,6 @@ package controller.clock
      */
     public class ClockEvent extends Event
     {
-        public static const START:String = "START";
         public static const TICK:String = "TICK";
 
         public var time:Date;

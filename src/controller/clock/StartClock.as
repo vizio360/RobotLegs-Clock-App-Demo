@@ -2,12 +2,7 @@ package controller.clock
 {
     import model.ClockModel;
 
-    import view.AnalogClock;
-    import view.DigitalClock;
-
     import org.robotlegs.mvcs.Command;
-
-    import flash.display.Sprite;
 
     /**
      * @author Simone Vicentini

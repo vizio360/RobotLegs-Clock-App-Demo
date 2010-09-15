@@ -1,8 +1,9 @@
 package
 {
+    import events.ClockAppEvent;
+
     import org.robotlegs.mvcs.Mediator;
 
-    import flash.display.Sprite;
     import flash.events.Event;
 
     /**
@@ -22,25 +23,25 @@ package
         {
             super.onRegister();
             eventMap.mapListener(view.stage, Event.RESIZE, onStageResize);
+            eventMap.mapListener(eventDispatcher, ClockAppEvent.ADD_CLOCK, addClock);
+        }
+
+        override public function onRemove():void
+        {
+            super.onRemove();
+            eventMap.unmapListener(view.stage, Event.RESIZE, onStageResize);
+            eventMap.unmapListener(eventDispatcher, ClockAppEvent.ADD_CLOCK, addClock);
         }
 
         private function onStageResize(e:Event):void
         {
-            alignChildren();
+            view.alignChildren();
         }
 
-        public function alignChildren():void
+        public function addClock(event:ClockAppEvent):void
         {
-            var clockCount:int = contextView.numChildren;
-            var clock:Sprite;
-            var y:Number = 10;
-            for (var i:int = 0; i < clockCount; i++)
-            {
-                clock = contextView.getChildAt(i) as Sprite;
-                clock.x = (contextView.stage.stageWidth - clock.width) / 2;
-                clock.y = y;
-                y += clock.height + 15;
-            }
+            view.addChild(event.clock);
+            view.alignChildren();
         }
     }
 }
